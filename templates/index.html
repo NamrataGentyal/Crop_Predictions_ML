@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction Model</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="login">
+        <form action="{{url_for('predict')}}" method="POST">
+            <h1>Crop Prediction Model</h1>
+            <input type="text" name="nigtrogen" placeholder="nigtrogen" required>
+            <input type="text" name="Phosphorus" placeholder="Phosphorus" required>
+            <input type="text" name="Potassium" placeholder="Potassium" required>
+            <input type="text" name="temprature" placeholder="temprature" required>
+            <input type="text" name="humidity" placeholder="humidity" required>
+            <input type="text" name="ph" placeholder="ph" required>
+            <input type="text" name="rainfall" placeholder="rainfall" required>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+
+        <h1 id="predi">{{prediction_text}}</h1>
+    </div>
+</body>
+</html>
